@@ -5,5 +5,12 @@ import { Candidates } from './candidates';
   name: 'filterCandidate'
 })
 export class FilterCandidatePipe implements PipeTransform {
-  transform(candidate: Candidates, filterDescription: string) {}
+  transform(candidate: Candidates[], filterQuery: string) {
+    if (filterQuery) {
+      filterQuery = filterQuery.trim().toLowerCase();
+      return candidate.filter(c => c.name.toLowerCase().includes(filterQuery));
+    } else {
+      return candidate;
+    }
+  }
 }
