@@ -1,1 +1,20 @@
-<p>candidates-list works!</p>
+<div class="example-container mat-elevation-z8">
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Celular</th>
+        <th>Criado por</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of candidates">
+        <td>{{ c.name }}</td>
+        <td>{{ c.email }}</td>
+        <td>{{ c.mobile }}</td>
+        <td>{{ c.createdBy.name }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
