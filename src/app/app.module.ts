@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app.routing.module';
 import { AppComponent } from './app.component';
 import { CandidatesModule } from './candidates/candidates.module';
+import { ErrorsModule } from './errors/errors.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,7 +15,8 @@ import { CandidatesModule } from './candidates/candidates.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    CandidatesModule
+    CandidatesModule,
+    ErrorsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
