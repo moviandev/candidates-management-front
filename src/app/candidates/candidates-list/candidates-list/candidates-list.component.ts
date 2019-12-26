@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { CandidatesListService } from '../candidates-list.service';
-import { Candidates } from '../candidates';
+import { CandidatesListService } from '../../candidate/candidate.service';
+import { Candidates } from '../../candidate/candidates';
 import { MatTable } from '@angular/material/table';
 
 @Component({
