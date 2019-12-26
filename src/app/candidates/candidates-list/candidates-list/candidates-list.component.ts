@@ -10,8 +10,7 @@ import { MatTable } from '@angular/material/table';
 })
 export class CandidatesListComponent implements OnInit {
   candidates: Candidates[] = [];
-  displayedColumns = ['name', 'email', 'mobile', 'createdBy'];
-  @ViewChild(MatTable, { static: true }) datatable: MatTable<any>;
+  filter: string;
 
   constructor(private candidatesService: CandidatesListService) {}
 
