@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { CandidatesListService } from '../../candidate/candidate.service';
 import { Candidates } from '../../candidate/candidates';
-import { MatTable } from '@angular/material/table';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'cm-candidates-list',
@@ -11,6 +11,7 @@ import { MatTable } from '@angular/material/table';
 export class CandidatesListComponent implements OnInit {
   candidates: Candidates[] = [];
   filter: string;
+  debounce: Subject<string> = new Subject<string>();
 
   constructor(private candidatesService: CandidatesListService) {}
 
