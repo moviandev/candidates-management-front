@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Candidates } from './candidates';
 
 @Component({
-  selector: 'app-candidate',
+  selector: 'cm-candidate',
   templateUrl: './candidate.component.html',
   styleUrls: ['./candidate.component.scss']
 })
