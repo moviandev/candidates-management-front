@@ -4,7 +4,7 @@ import { Candidates } from '../../candidate/candidates';
 import { MatTable } from '@angular/material/table';
 
 @Component({
-  selector: 'app-candidates-list',
+  selector: 'mjv-candidates-list',
   templateUrl: './candidates-list.component.html',
   styleUrls: ['./candidates-list.component.scss']
 })
