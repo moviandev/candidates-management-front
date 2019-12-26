@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { CandidatesListModule } from './candidates-list/candidates-list.module';
+import { CandidatesModule } from './candidates/candidates.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,7 +14,7 @@ import { CandidatesListModule } from './candidates-list/candidates-list.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    CandidatesListModule
+    CandidatesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
