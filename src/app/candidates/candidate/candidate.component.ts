@@ -6,6 +6,7 @@ import {
   SimpleChanges
 } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { Subject } from 'rxjs';
 
 import { Candidates } from './candidates';
 
@@ -16,7 +17,15 @@ import { Candidates } from './candidates';
 })
 export class CandidateComponent implements OnInit {
   @Input() candidates: MatTableDataSource<Candidates>;
-  displayedColumns: string[] = ['name', 'email', 'mobile', 'createdBy'];
+  displayedColumns: string[] = [
+    'name',
+    'email',
+    'mobile',
+    'tech',
+    'lastSalary',
+    'createdBy',
+    'star'
+  ];
 
   constructor() {}
 

@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import {
   MatTableModule,
   MatFormFieldModule,
-  MatInputModule
+  MatInputModule,
+  MatIconModule
 } from '@angular/material';
 import { CandidatesListComponent } from './candidates-list/candidates-list/candidates-list.component';
 import { CandidateComponent } from './candidate/candidate.component';
@@ -21,7 +22,8 @@ import { FormsModule } from '@angular/forms';
     MatTableModule,
     FormsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatIconModule
   ],
   exports: [CandidatesListComponent]
 })

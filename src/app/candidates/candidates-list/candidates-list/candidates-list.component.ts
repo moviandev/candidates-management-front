@@ -1,4 +1,10 @@
-import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnChanges,
+  SimpleChanges,
+  OnDestroy
+} from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
@@ -11,9 +17,8 @@ import { Candidates } from '../../candidate/candidates';
   templateUrl: './candidates-list.component.html',
   styleUrls: ['./candidates-list.component.scss']
 })
-export class CandidatesListComponent implements OnInit {
+export class CandidatesListComponent implements OnInit, OnDestroy {
   candidates: MatTableDataSource<Candidates[]>;
-  displayedColumns: string[] = ['name', 'email', 'mobile', 'createdBy'];
   debounce: Subject<string> = new Subject<string>();
 
   constructor(private candidatesService: CandidatesListService) {}
@@ -23,6 +28,10 @@ export class CandidatesListComponent implements OnInit {
       this.candidates = new MatTableDataSource<Candidates[]>(cn.data);
     });
     this.debounce.pipe(debounceTime(300)).subscribe(f => this.filter(f));
+  }
+
+  ngOnDestroy() {
+    this.debounce.unsubscribe();
   }
 
   filter(filterValue: string) {
