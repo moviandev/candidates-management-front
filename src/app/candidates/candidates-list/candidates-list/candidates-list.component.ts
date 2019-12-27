@@ -1,7 +1,9 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
+import { Subject } from 'rxjs';
+
 import { CandidatesListService } from '../../candidate/candidate.service';
 import { Candidates } from '../../candidate/candidates';
-import { Subject } from 'rxjs';
 
 @Component({
   selector: 'cm-candidates-list',
@@ -9,17 +11,18 @@ import { Subject } from 'rxjs';
   styleUrls: ['./candidates-list.component.scss']
 })
 export class CandidatesListComponent implements OnInit {
-  candidates: Candidates[] = [];
-  filter: string;
-  debounce: Subject<string> = new Subject<string>();
+  candidates: MatTableDataSource<Candidates[]>;
+  displayedColumns: string[] = ['name', 'email', 'mobile', 'createdBy'];
 
   constructor(private candidatesService: CandidatesListService) {}
 
   ngOnInit() {
     this.candidatesService.listAllCandidates().subscribe((cn: Candidates) => {
-      for (const t of cn.data) {
-        this.candidates.push(t);
-      }
+      this.candidates = new MatTableDataSource<Candidates[]>(cn.data);
     });
+  }
+
+  applyFilter(filterValue: string) {
+    this.candidates.filter = filterValue.trim().toLowerCase();
   }
 }

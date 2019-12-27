@@ -1,4 +1,12 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  OnChanges,
+  SimpleChanges
+} from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
+
 import { Candidates } from './candidates';
 
 @Component({
@@ -7,7 +15,8 @@ import { Candidates } from './candidates';
   styleUrls: ['./candidate.component.scss']
 })
 export class CandidateComponent implements OnInit {
-  @Input() candidates: Candidates[];
+  @Input() candidates: MatTableDataSource<Candidates>;
+  displayedColumns: string[] = ['name', 'email', 'mobile', 'createdBy'];
 
   constructor() {}
 

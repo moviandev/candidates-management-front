@@ -8,6 +8,8 @@ import { AppRoutingModule } from './app.routing.module';
 import { AppComponent } from './app.component';
 import { CandidatesModule } from './candidates/candidates.module';
 import { ErrorsModule } from './errors/errors.module';
+import { MatSortModule } from '@angular/material/sort';
+import { MatTableModule, MatTableDataSource } from '@angular/material/table';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,7 +20,8 @@ import { ErrorsModule } from './errors/errors.module';
     HttpClientModule,
     CandidatesModule,
     ErrorsModule,
-    FormsModule
+    FormsModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

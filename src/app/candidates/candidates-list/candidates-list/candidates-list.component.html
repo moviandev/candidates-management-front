@@ -1,5 +1,10 @@
 <div class="container">
-  <cm-candidate
-    [candidates]="candidates | filterCandidate: filter"
-  ></cm-candidate>
+  <mat-form-field>
+    <input
+      matInput
+      (keyup)="applyFilter($event.target.value)"
+      placeholder="Filter"
+    />
+  </mat-form-field>
+  <cm-candidate [candidates]="candidates"></cm-candidate>
 </div>
