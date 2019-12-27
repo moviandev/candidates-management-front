@@ -1,15 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import {
   MatTableModule,
   MatFormFieldModule,
   MatInputModule,
-  MatIconModule
+  MatIconModule,
+  MatSortModule,
+  MatPaginatorModule
 } from '@angular/material';
+
 import { CandidatesListComponent } from './candidates-list/candidates-list/candidates-list.component';
 import { CandidateComponent } from './candidate/candidate.component';
 import { FilterCandidatePipe } from './candidate/filterCandidate.pipe';
-import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,9 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    MatSortModule,
+    MatPaginatorModule
   ],
   exports: [CandidatesListComponent]
 })
