@@ -21,6 +21,5 @@ export class CandidatesListComponent implements OnInit {
         this.candidates.push(t);
       }
     });
-    console.log(this.candidates);
   }
 }
