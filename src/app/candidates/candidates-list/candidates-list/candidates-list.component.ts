@@ -37,7 +37,6 @@ export class CandidatesListComponent implements OnInit, OnDestroy {
         this.candidatesArrayLength = this.candidatesArray.length;
       }
       this.candidates.sort = this.sort;
-      console.log(this.candidates);
       this.candidates.paginator = this.paginator;
     });
     this.debounce.pipe(debounceTime(300)).subscribe(f => this.filter(f));
