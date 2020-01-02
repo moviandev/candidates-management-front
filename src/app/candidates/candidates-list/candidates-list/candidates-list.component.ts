@@ -20,12 +20,13 @@ import { MatPaginator, MatSort } from '@angular/material';
   styleUrls: ['./candidates-list.component.scss']
 })
 export class CandidatesListComponent implements OnInit, OnDestroy {
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
+  @ViewChild(MatSort, { static: true }) sort: MatSort;
+
   candidates: MatTableDataSource<Candidates[]>;
   candidatesArray: Candidates[] = [];
   candidatesArrayLength: number;
   debounce: Subject<string> = new Subject<string>();
-  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
-  @ViewChild(MatSort, { static: true }) sort: MatSort;
 
   constructor(private candidatesService: CandidatesListService) {}
 
