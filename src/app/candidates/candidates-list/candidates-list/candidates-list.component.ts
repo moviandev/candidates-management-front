@@ -1,11 +1,9 @@
 import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
-import { MatTableDataSource } from '@angular/material/table';
 import { Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 
 import { CandidatesListService } from '../../candidate/candidate.service';
 import { Candidates } from '../../candidate/candidates';
-import { MatPaginator, MatSort } from '@angular/material';
 
 @Component({
   selector: 'cm-candidates-list',
