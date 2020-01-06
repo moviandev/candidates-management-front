@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container candidates-card">
   <div class="float-left candidates-length">
     <p>
       Candidatos Cadastrados: <strong>{{ candidatesArrayLength }}</strong>
@@ -11,6 +11,8 @@
       placeholder="Filter"
     />
   </mat-form-field>
+  <div class="clearFix"></div>
+  <hr />
   <cm-candidate
     [candidates]="candidates | filterCandidate: filter"
   ></cm-candidate>

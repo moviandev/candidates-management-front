@@ -1,3 +1,7 @@
 table {
   width: 100%;
 }
+
+.removing-th-border thead>tr>th {
+  border-top: none !important;
+}
