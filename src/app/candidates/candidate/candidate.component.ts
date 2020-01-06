@@ -9,16 +9,7 @@ import { Candidates } from './candidates';
   styleUrls: ['./candidate.component.scss']
 })
 export class CandidateComponent implements OnInit {
-  @Input() candidates: MatTableDataSource<Candidates>;
-  displayedColumns: string[] = [
-    'name',
-    'email',
-    'mobile',
-    'tech',
-    'lastSalary',
-    'createdBy',
-    'star'
-  ];
+  @Input() candidates: Candidates[];
 
   constructor() {}
 

@@ -1,0 +1,24 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Telefone</th>
+      <th>Tecnologia que trabalha</th>
+      <th>Último Salário</th>
+      <th>Criado por</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let c of candidates">
+      <td>{{ c.name }}</td>
+      <td>{{ c.email }}</td>
+      <td>{{ c.mobile }}</td>
+      <td>{{ c.tech }}</td>
+      <td>{{ c.lastSalary }}</td>
+      <td>{{ c.createdBy['name'] }}</td>
+      <td><mat-icon>more_vert</mat-icon></td>
+    </tr>
+  </tbody>
+</table>

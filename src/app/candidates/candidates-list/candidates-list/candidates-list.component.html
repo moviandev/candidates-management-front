@@ -11,5 +11,7 @@
       placeholder="Filter"
     />
   </mat-form-field>
-  <cm-candidate [candidates]="candidates"></cm-candidate>
+  <cm-candidate
+    [candidates]="candidates | filterCandidate: filter"
+  ></cm-candidate>
 </div>
