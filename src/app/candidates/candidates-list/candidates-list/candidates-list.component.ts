@@ -23,8 +23,8 @@ export class CandidatesListComponent implements OnInit, OnDestroy {
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
 
-  candidates: MatTableDataSource<Candidates[]>;
-  candidatesArray: Candidates[] = [];
+  candidates: Candidates[] = [];
+  filter: string;
   candidatesArrayLength: number;
   debounce: Subject<string> = new Subject<string>();
 
@@ -32,25 +32,15 @@ export class CandidatesListComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.candidatesService.listAllCandidates().subscribe((cn: Candidates) => {
-      this.candidates = new MatTableDataSource<Candidates[]>(cn.data);
       for (const cd of cn.data) {
-        this.candidatesArray.push(cd);
-        this.candidatesArrayLength = this.candidatesArray.length;
+        this.candidates.push(cd);
+        this.candidatesArrayLength = this.candidates.length;
       }
-      this.candidates.sort = this.sort;
-      this.candidates.paginator = this.paginator;
     });
-    this.debounce.pipe(debounceTime(300)).subscribe(f => this.filter(f));
+    this.debounce.pipe(debounceTime(300)).subscribe(f => (this.filter = f));
   }
 
   ngOnDestroy() {
     this.debounce.unsubscribe();
-  }
-
-  filter(filterValue: string) {
-    this.candidates.filter = filterValue.trim().toLowerCase();
-    if (this.candidates.paginator) {
-      this.candidates.paginator.firstPage();
-    }
   }
 }
