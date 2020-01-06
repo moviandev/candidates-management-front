@@ -11,9 +11,6 @@ import { Candidates } from '../../candidate/candidates';
   styleUrls: ['./candidates-list.component.scss']
 })
 export class CandidatesListComponent implements OnInit, OnDestroy {
-  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
-  @ViewChild(MatSort, { static: true }) sort: MatSort;
-
   candidates: Candidates[] = [];
   filter: string;
   candidatesArrayLength: number;
